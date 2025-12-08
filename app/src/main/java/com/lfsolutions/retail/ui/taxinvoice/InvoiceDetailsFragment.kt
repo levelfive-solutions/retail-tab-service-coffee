@@ -77,7 +77,7 @@ class InvoiceDetailsFragment : Fragment(), CalcDialog.CalcDialogCallback {
         Glide.with(binding.signature).load(invoice?.salesInvoice?.signatureUrl()).centerCrop()
             .placeholder(R.drawable.no_image).into(binding.signature)
         binding.invoiceNo.text = invoice?.salesInvoice?.invoiceNo
-        binding.invoiceDate.text = invoice?.salesInvoice?.InvoiceDateFormatted()
+        binding.invoiceDate.text = invoice?.salesInvoice?.InvoiceDateFormattedPrint()
         binding.status.text = invoice?.salesInvoice?.StatusFormatted()
         binding.invoiceAmount.text = invoice?.salesInvoice?.InvoiceGrandTotalFromatted()
         binding.balance.text = invoice?.salesInvoice?.BalanceFormatted()
