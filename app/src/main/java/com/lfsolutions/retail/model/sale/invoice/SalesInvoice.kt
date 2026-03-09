@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 import com.lfsolutions.retail.Main
 import com.lfsolutions.retail.util.DateTime
+import com.lfsolutions.retail.util.DateTime.getTimeOnlyFromCreationTime
 import com.lfsolutions.retail.util.formatDecimalSeparator
 import com.lfsolutions.retail.util.formatPriceForApi
 import com.lfsolutions.retail.util.formatToTwoDecimals
@@ -231,6 +232,26 @@ data class SalesInvoice(
         )
         val formatted = DateTime.format(date, DateTime.DateFormatWithDayNameMonthNameAndTime)
         return formatted ?: invoiceDate ?: ""
+    }
+
+    fun InvoiceDateFormattedPrint(): String {
+
+        // 1. Get local time from creationTime
+        val localTime = getTimeOnlyFromCreationTime(creationTime)
+
+        // 2. Get only the date part from deliveryDate
+        val datePart = invoiceDate?.substringBefore("T") ?: return ""
+
+        // 3. Parse the datePart
+        val date = DateTime.getDateFromString(
+            datePart,
+            "yyyy-MM-dd"
+        )
+        // 4. Format date only → "EEEE, dd MMM"
+        val formattedDate = DateTime.format(date, "EEEE, dd MMM") ?: ""
+
+        // 5. Append localTime directly
+        return "$formattedDate $localTime"
     }
 
     fun StatusFormatted(): String {

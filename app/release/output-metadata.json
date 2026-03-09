@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 198,
-      "versionName": "0.2.198",
-      "outputFile": "Retail_Release_VC198_VN0.2.198_VD20251110-1725.apk"
+      "versionCode": 199,
+      "versionName": "0.2.199",
+      "outputFile": "Retail_Release_VC199_VN0.2.199_VD20251208-1125.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/Retail_Release_VC198_VN0.2.198_VD20251110-1725.dm"
+        "baselineProfiles/1/Retail_Release_VC199_VN0.2.199_VD20251208-1125.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/Retail_Release_VC198_VN0.2.198_VD20251110-1725.dm"
+        "baselineProfiles/0/Retail_Release_VC199_VN0.2.199_VD20251208-1125.dm"
       ]
     }
   ],
